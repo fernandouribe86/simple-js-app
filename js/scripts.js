@@ -1,4 +1,22 @@
-alert('Hello world');
+let pokemonList = [
+	{
+		name: 'bulbasaur',
+		types: ['grass' , 'poison'],
+		height: 7,
+	},
 
-let favoriteFood = 'double-double';
-document.write(favoriteFood)
+	{
+		name: 'ivysaur',
+		types: ['grass' , 'poison'],
+		height: 8,
+	},
+
+	{
+		name: 'venusaur',
+		types: ['grass' , 'poison'],
+		height: 10,
+	}
+]
+
+console.log(pokemonList);
+
