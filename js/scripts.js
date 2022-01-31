@@ -1,22 +1,30 @@
 let pokemonList = [
 	{
-		name: 'bulbasaur',
+		name: 'Bulbasaur',
 		types: ['grass' , 'poison'],
-		height: 7,
+		height: .7,
 	},
 
 	{
-		name: 'ivysaur',
+		name: 'Ivysaur',
 		types: ['grass' , 'poison'],
-		height: 8,
+		height: 1.7,
 	},
 
 	{
-		name: 'venusaur',
+		name: 'Venusaur',
 		types: ['grass' , 'poison'],
-		height: 10,
+		height: 1,
 	}
-]
+];
 
 console.log(pokemonList);
 
+
+
+for (let i = 0; i < pokemonList.length; i++) {
+	if(pokemonList[i].height > 1){
+		document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ') - Wow, that\'s big!', '<br>');
+	} else {document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')', '<br>');
+}
+};
