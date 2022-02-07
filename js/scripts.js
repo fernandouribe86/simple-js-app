@@ -91,8 +91,25 @@ pokemonRepository.getAll().forEach(function(pokemon){
 	}
 });
 
-let pokemonSearch = prompt('Search to see if you have caught this pokemon before!');
+
+
+/* let pokemonSearch = prompt('Search to see if you have caught this pokemon before!');
 console.log(pokemonSearch);
 
 let pokemonArray = pokemonRepository.getAll();
 console.log(pokemonArray);
+
+Object.keys(pokemonArray).forEach(function(pokemon){
+	if(pokemon.height > '1'){
+	document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') - Wow, that\'s big!' + '</p>');
+} else {document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')');
+}});
+
+document.write('<p>You are searching for ' + pokemonSearch + '. Your result is below.</p>');
+let filteredPokemon = [];
+pokemonArray.forEach(pokemon => {
+	if(pokemon.name.includes(pokemonSearch)) filteredPokemon.push(pokemon);
+});
+filteredPokemon.forEach(pokemon => {
+	document.write('<p>' + pokemon.name + '</p>');
+}); */
