@@ -1,1 +1,117 @@
+*{
+    box-sizing: border-box;
+}
 
+body{
+	min-height: 100vh;
+	background-color: white;
+	background-image: url("../img/background-pattern-pokemon-psyduck-Favim.com-4630343.jpeg");
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	background-color: #e8e187;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 100px;
+}
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 25px;
+	margin-right: 25px;
+	height: 100%;
+}
+
+header h1{
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	vertical-align: middle;
+	color: #0f2e22;
+	font-size: 32px;
+}
+
+.search-button{
+	background-color: #e8e187;
+	border-style: none;
+	padding-left: 10px;
+}
+
+.search-button i{
+	border-style: none;
+	color: #0f2e22;
+}
+
+
+.search-icon:hover, .search-icon:focus{
+	color: #a95817;
+}
+
+.search-icon:active{
+	color: #eef2f2;
+}
+
+.navigation-list{
+	list-style-type: none;
+	display: inline-flex;
+	flex-direction: row;
+}
+
+.navigation-list li{
+	margin-right: 60px;
+	font-size: 22px;
+	margin-top: 22px;
+	font-family: Helvetica, sans-serif;
+	font-weight: lighter;
+}
+
+.navigation-list-item--active{
+	text-decoration: none;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.pokemon-list{
+	list-style: none;
+}
+
+.pokedex-button{
+	background-color: #eef2f2;
+	color: #0f2e22;
+	border-style: none;
+	height: 60px;
+	margin-top: 10px;
+	width: 600px;
+	max-width: 90%;
+	font-size: 22px;
+	text-align: center;
+	vertical-align: center;
+	font-family: Helvetica, sans-serif;
+	border-radius: 10px;
+	padding-left: 25px;
+	box-shadow: 2px 2px;
+}
+
+.pokedex-button:hover, .pokedex-button:focus{
+	background-color: #93bf1d;
+	cursor: pointer;
+}
+ 
+.pokedex-button:active{
+	background-color: #0f2e22;
+	color: #eef2f2;
+}
+
+.pokedex-button:visited{
+	background-color: #eef2f2;
+}
