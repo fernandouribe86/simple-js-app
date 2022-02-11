@@ -5,15 +5,16 @@
 body{
 	min-height: 100vh;
 	background-color: white;
-	background-image: url("../img/background-pattern-pokemon-psyduck-Favim.com-4630343.jpeg");
-	background-size: cover;
+	background-image: url("../img/pokemon-bkg.jpg");
+	background-position: left;
+	background-size: contain;
 	margin: 0;
 	padding: 0;
 }
 
 header{
 	background-color: #e8e187;
-	min-width: 100%;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	height: 100px;
@@ -35,6 +36,26 @@ header h1{
 	font-size: 32px;
 }
 
+.search-area{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+/* .search-bar{
+	background-color: #eef2f2;
+	margin-top:25px;
+	height: 45px;
+	width: 250px;
+	border-style: none;
+	margin-right: 12px;
+	border-radius: 8px;
+	padding-left: 10px;
+	font-family: Helvetica, sans-serif;
+	color: #0f2e22;
+	font-size: 22px;
+} */
+
 .search-button{
 	background-color: #e8e187;
 	border-style: none;
@@ -49,6 +70,7 @@ header h1{
 
 .search-icon:hover, .search-icon:focus{
 	color: #a95817;
+	cursor: pointer;
 }
 
 .search-icon:active{
@@ -81,6 +103,35 @@ main {
 	align-items: center;
 }
 
+@keyframes color-change {
+	0%{
+		background-color: #e69d37;
+	}
+	50%{
+		background-color: #eef2f2;
+	}
+	100%{
+		background-color: #e69d37;
+	}
+}
+
+
+#loading-container{
+	animation: 5s color-change infinite alternate linear;
+	color: #0f2e22;
+	border-style: none;
+	height: 60px;
+	margin-top: 10px;
+	width: 300px;
+	font-size: 22px;
+	padding-top: 17px;
+	text-align: center;
+	vertical-align: center;
+	font-family: Helvetica, sans-serif;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
 .pokemon-list{
 	list-style: none;
 }
@@ -98,7 +149,6 @@ main {
 	vertical-align: center;
 	font-family: Helvetica, sans-serif;
 	border-radius: 10px;
-	padding-left: 25px;
 	box-shadow: 2px 2px;
 }
 
@@ -106,7 +156,7 @@ main {
 	background-color: #93bf1d;
 	cursor: pointer;
 }
- 
+
 .pokedex-button:active{
 	background-color: #0f2e22;
 	color: #eef2f2;
