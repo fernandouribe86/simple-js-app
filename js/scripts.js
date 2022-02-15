@@ -38,19 +38,8 @@ const pokemonRepository = (function() {
 
 	function showDetails(pokemon){
 		console.log(pokemon.name)
+		//NEW CODE HERE//
 	}
-
-	function showLoadingMessage(){
-		let loadingContainer = document.querySelector('#loading-container');
-
-		loadingContainer.innerHTML = 'Loading Pokedéx...';
-			// loadingContainer.removeAttribute('hidden');
-	};
-
-	function hideLoadingMessage(){
-		let loadingContainer = document.querySelector('#loading-container');
-		loadingContainer.setAttribute('hidden', true);
-	};
 
 	function loadList(){
 		return fetch(apiUrl).then(function(response){
@@ -82,10 +71,45 @@ const pokemonRepository = (function() {
 	};
 
 	function showDetails(item) {
-		loadDetails(item).then(function () {
-			console.log(item);
+		loadDetails(item).then(function showModal (title, text) {
+			let modalContainer = document.querySelector('#modal-container');
+
+			modalContainer.innerHTML = '';
+
+			let modal = document.createElement('div');
+			modal.classList.add('modal');
+
+			let closeButtonElement = document.createElement('button');
+			closeButtonElement.classList.add('modal-close');
+			closeButtonElement.innerText = 'return to pokedex';
+			closeButtonElement.addEventListener('click', hideModal);
+
+			let titleElement = document.createElement ('h3');
+			titleElement.innerText = item.name;
+
+			let imgElement = document.createElement('img');
+			imgElement.src = item.imageUrl;
+
+			let contentElement = document.createElement('p');
+			contentElement.innerText = 'height: ' + item.height;
+
+			modal.appendChild(titleElement);
+			modal.appendChild(imgElement);
+			modal.appendChild(contentElement);
+			modal.appendChild(closeButtonElement);
+			modalContainer.appendChild(modal);
+
+			modalContainer.classList.add('is-visible');
+
+			modalContainer.addEventListener('click', (e) => {
+				let target = e.target;
+				if(target === modalContainer){
+					hideModal();
+				}
+			});
 		});
 	}
+
 
 	return {
 		add: add,
@@ -95,68 +119,25 @@ const pokemonRepository = (function() {
 		showDetails: showDetails,
 		loadList: loadList,
 		loadDetails: loadDetails,
-		showLoadingMessage: showLoadingMessage,
-		hideLoadingMessage: hideLoadingMessage,
 	 };
 
 })();
-
-pokemonRepository.showLoadingMessage();
-
-setTimeout( function(){
+//END IIFE
 
 pokemonRepository.loadList().then(function(){
 	pokemonRepository.getAll().forEach(function(pokemon){
 		pokemonRepository.addListItem(pokemon);
 	});
-	pokemonRepository.hideLoadingMessage();
-});}, 5000);
+});
 
+function hideModal(){
+  let modalContainer = document.querySelector('#modal-container');
+  modalContainer.classList.remove('is-visible');
+};
 
-
-
-
-
-
-// HIDING OLD/EXPERIMENTAL CODE FOR REFERENCE
-
-// const pokemonArray = pokemonRepository.getAll();
-// console.log(pokemonArray);
-// console.log(pokemonRepository.add({name: 'Pikachu', types: ['electric'], height: '.9'}));
-//
-// console.log(pokemonRepository.getAll());
-//
-// pokemonArray.forEach(function(pokemon){
-// 	pokemonRepository.addListItem(pokemon);
-// });
-
-// const pokemonSearchTool = document.querySelector('.search-icon');
-// pokemonSearchTool.addEventListener('click', () => {
-// 	searchTextArea();
-// });
-//
-// function searchTextArea(pokemon){
-// 	document.write('<label class="standard-label" for="contact-message">' + 'Search:' + '</label>' + '<textarea id="contact-message" maxlength="240">'+'</textarea>');
-// }
-
-// pokemonArray.forEach(function(pokemon){
-// 	if(pokemon.height > '1'){
-// 		document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') - Wow, that\'s big!' + '</p>');
-// 	} else {document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')');
-// 	}
-// });
-
-
-
-//HIDING SEARCH CODE FOR NOW WHILE I LEARN MORE
-
-// let pokemonSearch = prompt('Search to see if you have caught this pokemon before!');
-// console.log(pokemonSearch);
-//
-// let pokemonResult = pokemonRepository.search(pokemonArray, pokemonSearch);
-// console.log(pokemonResult);
-
-// if (pokemonResult.length > 0){
-// 	document.write('<p> Search Result: You have already found this pokemon. </p>')
-// }else{document.write('<p> Search Result: You have not found this pokemon yet. </p>')
-// };
+window.addEventListener('keydown', (e) => {
+  let modalContainer = document.querySelector('#modal-container');
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
