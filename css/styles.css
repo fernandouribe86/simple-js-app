@@ -1,4 +1,58 @@
-*{
+header{
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #e8e187;
+}
+
+.navbar-collapse{
+background-color: none;
+}
+
+body{
+  background-color: #0f2e22;
+}
+
+button{
+  width: 250px;
+  margin-bottom: 5px;
+  max-width: 90%;
+}
+
+.navbar-toggler{
+  text-align: left;
+  width: 50px;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-style: none;
+}
+
+
+#search-bar{
+  float:right;
+}
+
+.container-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-dialog{
+  width: 400px;
+  max-width: 80%;
+}
+
+.close{
+  text-align: right;
+}
+
+.modal-body{
+  text-align: center;
+}
+
+/*{
     box-sizing: border-box;
 }
 
@@ -212,4 +266,4 @@ nav button:hover, button:focus, button:active, button:visited{
 #modal-container button:active{
 	background-color: #c5460f;
 	color: #eef2f2;
-}
+} */ */
