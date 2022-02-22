@@ -1,15 +1,16 @@
-header{
-  margin-bottom: 10px;
-  width: 100%;
-  background-color: #e8e187;
-}
-
-.navbar-collapse{
-background-color: none;
+:root{
+	--pgreen: #0f2ee2;
+	--ptan: #e8e187;
 }
 
 body{
-  background-color: #0f2e22;
+  background-color: var(--pgreen);
+}
+
+header{
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: var(--ptan);
 }
 
 button{
@@ -27,7 +28,6 @@ button{
   padding-bottom: 5px;
   border-style: none;
 }
-
 
 #search-bar{
   float:right;
@@ -51,219 +51,3 @@ button{
 .modal-body{
   text-align: center;
 }
-
-/*{
-    box-sizing: border-box;
-}
-
-body{
-	min-height: 100vh;
-	background-color: white;
-	background-image: url("../img/pokemon-bkg.jpg");
-	background-position: left;
-	background-size: contain;
-	margin: 0;
-	padding: 0;
-}
-
-header{
-	background-color: #e8e187;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	height: 100px;
-}
-nav{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin-left: 25px;
-	margin-right: 25px;
-	height: 100%;
-}
-
-header h1{
-	font-family: Helvetica, sans-serif;
-	font-weight: bold;
-	vertical-align: middle;
-	color: #0f2e22;
-	font-size: 32px;
-}
-
-#search-area{
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.search-button{
-	background-color: #e8e187;
-	border-style: none;
-	padding-left: 10px;
-}
-
-.search-button i{
-	border-style: none;
-	color: #0f2e22;
-}
-
-
-.search-icon:hover, .search-icon:focus{
-	color: #a95817;
-	cursor: pointer;
-}
-
-.search-icon:active{
-	color: #eef2f2;
-}
-
-.navigation-list{
-	list-style-type: none;
-	display: inline-flex;
-	flex-direction: row;
-}
-
-.navigation-list li{
-	margin-right: 60px;
-	font-size: 22px;
-	margin-top: 22px;
-	font-family: Helvetica, sans-serif;
-	font-weight: lighter;
-}
-
-.navigation-list-item--active{
-	text-decoration: none;
-}
-
-main {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-@keyframes color-change {
-	0%{
-		background-color: #e69d37;
-	}
-	50%{
-		background-color: #eef2f2;
-	}
-	100%{
-		background-color: #e69d37;
-	}
-}
-
-nav button:hover, button:focus, button:active, button:visited{
-	background-color: #e8e187;
-}
-
-#loading-container{
-	animation: 5s color-change infinite alternate linear;
-	color: #0f2e22;
-	border-style: none;
-	height: 60px;
-	margin-top: 10px;
-	width: 300px;
-	font-size: 22px;
-	padding-top: 17px;
-	text-align: center;
-	vertical-align: center;
-	font-family: Helvetica, sans-serif;
-	border-radius: 10px;
-	vertical-align: middle;
-}
-
-.pokemon-list{
-	list-style: none;
-}
-
-.pokedex-button{
-	background-color: #eef2f2;
-	color: #0f2e22;
-	border-style: none;
-	height: 60px;
-	margin-top: 10px;
-	width: 600px;
-	max-width: 90%;
-	font-size: 22px;
-	text-align: center;
-	vertical-align: center;
-	font-family: Helvetica, sans-serif;
-	border-radius: 10px;
-	box-shadow: 2px 2px;
-}
-
-.pokedex-button:hover, .pokedex-button:focus{
-	background-color: #93bf1d;
-	cursor: pointer;
-}
-
-.pokedex-button:active{
-	background-color: #0f2e22;
-	color: #eef2f2;
-}
-
-.pokedex-button:visited{
-	background-color: #eef2f2;
-}
-
-#modal-container{
-	display: none;
-	position: fixed;
-	padding: 20px;
-	box-sizing: border-box;
-	top: 0;
-	left: 0;
-	margin-top: 20%;
-	margin-bottom: 20%;
-	margin-left: 35%;
-	margin-right: 35%;
-	min-width: 250px;
-	width: 30%;
-	height: 40%;
-	background: #eef2f2;
-	z-index: 999;
-	overflow: auto;
-	text-align: center;
-	color: #0f2e22;
-	font-family: Helvetica, sans-serif;
-	border-style: dashed;
-	border-color: #0f2e22;
-	border-width: thin;
-}
-
-#modal-container.is-visible{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-around;
-}
-
-
-#modal-container button, button:visited{
-	background-color: #0f2e22;
-	color: #eef2f2;
-	border-style: none;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-left: 25px;
-	padding-right: 25px;
-	margin-bottom: 20px;
-	margin-top: 10px;
-	border-radius: 10px;
-	font-family: Helvetica, sans-sans-serif;
-	font-size: 18px;
-}
-
-#modal-container button:hover, button:focus{
-	background-color: #93bf1d;
-	cursor: pointer;
-	color: #0f2e22;
-}
-
-#modal-container button:active{
-	background-color: #c5460f;
-	color: #eef2f2;
-} */ */
